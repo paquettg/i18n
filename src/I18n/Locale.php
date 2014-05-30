@@ -1,10 +1,22 @@
 <?php
 namespace I18n;
 
+use I18n\Exception\DuplicateKeyException;
+
 class Locale {
 
+	/**
+	 * The locale string.
+	 *
+	 * @var string
+	 */
  	protected $locale = '';
 
+	/**
+	 * The strings array.
+	 *
+	 * @var array
+	 */
 	protected $strings = [];
 
 	/**

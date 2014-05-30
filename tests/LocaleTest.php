@@ -22,6 +22,12 @@ class LocaleTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('Hello,', $locale->hi);
 	}
 
+	public function testGetNoStringFound()
+	{
+		$locale = new I18n\Locale;
+		$this->assertNull($locale->get('foo'));
+	}
+
 	public function testFlatten()
 	{
 		$locale = new I18n\Locale;
@@ -40,7 +46,7 @@ class LocaleTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException \I18n\DuplicateKeyException
+	 * @expectedException \I18n\Exception\DuplicateKeyException
 	 */
 	public function testFlattenThrowDuplicateKeyException()
 	{
