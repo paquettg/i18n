@@ -57,4 +57,12 @@ class I18nTest extends PHPUnit_Framework_TestCase {
 		], 'en_CA');
 		$i18n->load('en_US');
 	}
+
+	public function testLoadDirectory()
+	{
+		$i18n = new I18n\I18n;
+		$i18n->set(__DIR__.'/dir/');
+		$i18n->load('en_CA');
+		$this->assertEquals('More Testing!', $i18n->get('test.testing'));
+	}
 }
