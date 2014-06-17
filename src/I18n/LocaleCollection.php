@@ -57,7 +57,7 @@ class LocaleCollection {
 	}
 
 	/**
-	 * Loads a gicen local to be ready to use.
+	 * Loads a given local to be ready to use.
 	 *
 	 * @param string $locale
 	 * @chainable
@@ -72,10 +72,6 @@ class LocaleCollection {
 		$this->locales[$locale]->flatten();
 		$this->activeLocale = $locale;
 		return $this;
-	}
-
-	public function setDirectory($dir)
-	{
 	}
 
 	/**
