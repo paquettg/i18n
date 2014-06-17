@@ -2,6 +2,7 @@
 namespace I18n;
 
 use I18n\Exception\DuplicateKeyException;
+use I18n\Exception\EmptyLocaleException;
 
 class Locale {
 
@@ -54,6 +55,11 @@ class Locale {
 	 */
 	public function setLocale($locale)
 	{
+		$locale = (string) $locale;
+		if ($locale == '')
+		{
+			throw new EmptyLocaleException('The locale must be a string and not empty.');
+		}
 		$this->locale = $locale;
 		return $this;
 	}

@@ -10,6 +10,15 @@ class LocaleTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue($locale->isLocale('en_US'));
 	}
 
+	/**
+	 * @expectedException \I18n\Exception\EmptyLocaleException
+	 */
+	public function testNullLocale()
+	{
+		$locale = new I18n\Locale;
+		$locale->setLocale(null);
+	}
+
 	public function testSetStrings()
 	{
 		$locale = new I18n\Locale;
