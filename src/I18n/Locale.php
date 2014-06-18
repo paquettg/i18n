@@ -21,6 +21,14 @@ class Locale {
 	protected $strings = [];
 
 	/**
+	 * The delimiter character (or string) to use when flattening
+	 * the array.
+	 *
+	 * @var string
+	 */
+	protected $delimiter = '.';
+
+	/**
 	 * Gets a value from the strings array by magic method.
 	 *
 	 * @param string $key
@@ -77,6 +85,19 @@ class Locale {
 	}
 
 	/**
+	 * Sets the delimiter string to be used when flattening
+	 * the array.
+	 *
+	 * @param string $delimiter
+	 * @chainable
+	 */
+	public function setDelimiter($delimiter)
+	{
+		$this->delimiter = (string) $delimiter;
+		return $this;
+	}
+
+	/**
 	 * Checks if the given locale matches the locale in this object.
 	 *
 	 * @param string $locale
@@ -115,7 +136,7 @@ class Locale {
 		{
 			if (strlen($preString) > 0)
 			{
-				$key = $preString.'.'.$key;
+				$key = $preString.$this->delimiter.$key;
 			}
 			if ( ! is_array($string))
 			{

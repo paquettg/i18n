@@ -13,6 +13,14 @@ class I18n {
 	protected $collection;
 
 	/**
+	 * Sets a delimiter to be passed to the locale collection
+	 * on load.
+	 *
+	 * @param string
+	 */
+	protected $delimiter = null;
+
+	/**
 	 * Sets up the collection attribute
 	 */
 	public function __construct()
@@ -43,6 +51,19 @@ class I18n {
 	}
 
 	/**
+	 * Sets the delimiter to be passed on to the collection
+	 * on load.
+	 *
+	 * @param string
+	 * @chainable
+	 */
+	public function setDelimiter($delimiter)
+	{
+		$this->delimiter = (string) $delimiter;
+		return $this;
+	}
+
+	/**
 	 * Load a given local to be ready to use.
 	 *
 	 * @param string $locale
@@ -50,7 +71,7 @@ class I18n {
 	 */
 	public function load($locale)
 	{
-		$this->collection->load($locale);
+		$this->collection->load($locale, $this->delimiter);
 		return $this;
 	}
 

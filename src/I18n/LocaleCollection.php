@@ -21,13 +21,6 @@ class LocaleCollection {
 	protected $locales = [];
 
 	/**
-	 * The directory set to be scanned.
-	 *
-	 * @var string
-	 */
-	protected $directory;
-
-	/**
 	 * Gets the value set at $key in the current locale using magic.
 	 *
 	 * @param string $key
@@ -60,15 +53,20 @@ class LocaleCollection {
 	 * Loads a given local to be ready to use.
 	 *
 	 * @param string $locale
+	 * @param string $delimiter
 	 * @chainable
 	 */
-	public function load($locale)
+	public function load($locale, $delimiter = null)
 	{
 		if ( ! isset($this->locales[$locale]))
 		{
 			throw new LocaleNotFoundException("The locale '$locale' was not found in this collection.");
 		}
 
+		if ( ! is_null($delimiter))
+		{
+			$this->locales[$locale]->setDelimiter($delimiter);
+		}
 		$this->locales[$locale]->flatten();
 		$this->activeLocale = $locale;
 		return $this;
