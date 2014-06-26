@@ -2,7 +2,7 @@
     "name": "paquettg/i18n",
     "type": "library",
     "description": "A stand alone i18n php library.",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "keywords": ["i18n", "Internationalization"],
     "homepage": "https://github.com/paquettg/i18n",
     "license": "MIT",

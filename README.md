@@ -1,6 +1,10 @@
 i18n
 ====
 
+Version 0.1.0
+
+[![Build Status](https://travis-ci.org/paquettg/i18n.svg?branch=master)](https://travis-ci.org/paquettg/i18n)
+
 I18n is a php framework agnostic package to handle I18n functionality (such an original name). The goal is to have the ability to implement multiple languages into a website with out needing to depend on a framework.
 
 Install
