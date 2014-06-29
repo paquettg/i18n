@@ -73,6 +73,22 @@ class LocaleCollection {
 	}
 
 	/**
+	 * Return the raw strings array from the collection.
+	 *
+	 * @return array
+	 */
+	public function raw()
+	{
+		if (is_null($this->activeLocale))
+		{
+			throw new NoLocaleLoadedException('No locale was loaded for this collection.');
+		}
+
+		$locale = $this->activeLocale;
+		return $this->locales[$locale]->raw();
+	}
+
+	/**
 	 * Sets an array directly into the collection as a given locale.
 	 *
 	 * @param array $strings

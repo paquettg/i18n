@@ -54,6 +54,24 @@ class LocaleTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('More Testing!', $locale->get('test.testing'));
 	}
 
+	public function testRaw()
+	{
+		$locale = new I18n\Locale;
+		$locale->setStrings([
+			'hi'      => 'Hello,',
+			'rawr'    => 'Rawr, I am the king!',
+			'foo'     => 'bar',
+			'test'    => [
+				'testing' => 'More Testing!',
+				'ok'      => 'Testing is ok... I guess.',
+			],
+		]);
+		$locale->flatten();
+		$raw = $locale->raw();
+
+		$this->assertEquals('More Testing!', $raw['test.testing']);
+	}
+
 	public function testSetDelimiter()
 	{
 		$locale = new I18n\Locale;

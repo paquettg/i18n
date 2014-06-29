@@ -122,6 +122,16 @@ class Locale {
 	}
 
 	/**
+	 * Return the $strings array.
+	 *
+	 * @return array
+	 */
+	public function raw()
+	{
+		return $this->strings;
+	}
+
+	/**
 	 * Flattens the given string array with the given pre String.
 	 *
 	 * @recursive

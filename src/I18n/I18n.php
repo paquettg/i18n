@@ -45,9 +45,23 @@ class I18n {
 	 * @param string $key
 	 * @return mixed
 	 */
-	public function get($key)
+	public function get($key = null)
 	{
+		if (is_null($key))
+		{
+			return $this->raw();
+		}
 		return $this->collection->get($key);
+	}
+
+	/**
+	 * Get the raw strings array from the collection.
+	 *
+	 * @return array
+	 */
+	public function raw()
+	{
+		return $this->collection->raw();
 	}
 
 	/**
