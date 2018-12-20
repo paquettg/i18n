@@ -11,7 +11,7 @@ I18n is a php framework agnostic package to handle I18n functionality (such an o
 Install
 -------
 
-This package can be found on [packagist](https://packagist.org/packages/paquettg/i18n) and is best loaded using [composer](http://getcomposer.org/). We support php 5.4, 5.5, and hhvm.
+This package can be found on [packagist](https://packagist.org/packages/paquettg/i18n) and is best loaded using [composer](http://getcomposer.org/). We support PHP 7.1, 7.2, and 7.3.
 
 Simple Example
 --------------
