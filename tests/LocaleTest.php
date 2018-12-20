@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
-class LocaleTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+final class LocaleTest extends TestCase {
 
 	public function testIsLocale()
 	{

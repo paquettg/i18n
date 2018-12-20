@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
-class LocaleCollectionTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+final class LocaleCollectionTest extends TestCase {
 
 	public function testSetArray()
 	{

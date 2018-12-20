@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
-class I18nTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+final class I18nTest extends TestCase {
 
 	public function testSetArray()
 	{

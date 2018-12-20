@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
-class FacadeStaticI18nTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+final class FacadeStaticI18nTest extends TestCase {
 
 	public function setUp()
 	{
