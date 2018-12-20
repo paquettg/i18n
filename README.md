@@ -1,7 +1,7 @@
 i18n
 ====
 
-Version 1.0.0
+Version 1.0.1
 
 [![Build Status](https://travis-ci.org/paquettg/i18n.svg)](https://travis-ci.org/paquettg/i18n)
 [![Coverage Status](https://coveralls.io/repos/paquettg/i18n/badge.png)](https://coveralls.io/r/paquettg/i18n)
